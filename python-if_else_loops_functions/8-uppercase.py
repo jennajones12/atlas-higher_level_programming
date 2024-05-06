@@ -7,5 +7,4 @@ def uppercase(s):
             result += chr(ascii_val - 32)
         else:
             result += char
-            print(result)
-            print()
+        print("{}\n".format(result))
