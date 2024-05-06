@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-print("\n".join(["Decimal: {}, Hexadecimal: {}".format(
+print("\n".join([" {} = {}".format(
     num, hex(num)) for num in range(99)]))
