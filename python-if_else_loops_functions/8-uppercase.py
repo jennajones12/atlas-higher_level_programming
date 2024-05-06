@@ -6,5 +6,5 @@ def uppercase(s):
         if 97 <= ascii_val <= 122:
             result += chr(ascii_val - 32)
         else:
-            result += char 
+            result += char
     print("{}".format(result))
