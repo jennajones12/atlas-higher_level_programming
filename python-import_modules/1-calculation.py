@@ -1,6 +1,5 @@
-#!/usr/bin/python3
 if __name__ == "__main__":
-
+#!/usr/bin/python3
 a = 10
 b = 5
 import calculator_1
