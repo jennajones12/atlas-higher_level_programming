@@ -10,4 +10,4 @@ if __name__ == "__main__":
     result_div = div(a, b)
 
     print('{} + {} = {}\n{} - {} = {}\n{} * {} = {}\n{} / {} = {}'.format(a,
-        b, result_add, a, b, result_sub, a, b, result_mul, a, b, result_div))
+            b, result_add, a, b, result_sub, a, b, result_mul, a, b, result_div))
