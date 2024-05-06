@@ -1,10 +1,14 @@
 #!/usr/bin/python3
+if __name__ == "__main__":
+
 a = 10
 b = 5
 import calculator_1
 
-# Performing calculations and printing the results
-print('{} + {} = {}'.format(a, b, calculator_1.add(a, b)))
-print('{} - {} = {}'.format(a, b, calculator_1.sub(a, b)))
-print('{} * {} = {}'.format(a, b, calculator_1.mul(a, b)))
-print('{} / {} = {}'.format(a, b, calculator_1.div(a, b)))
+result_add = calculator_1.add(a, b)
+result_sub = calculator_1.sub(a, b)
+result_mul = calculator_1.mul(a, b)
+result_div = calculator_1.div(a, b)
+
+print('{} + {} = {}\n{} - {} = {}\n{} * {} = {}\n{} / {} = {}'.format(
+    a, b, result_add, a, b, result_sub, a, b, result_mul, a, b, result_div))
