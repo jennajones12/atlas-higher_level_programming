@@ -1,14 +1,11 @@
 #!/usr/bin/python3
-
-
 class Square:
     """
-
     Defines a square
 
 
     Private instance attribute:
-        sieze: size of square
+        size: size of square
 
 
     Instantiation with optional size:
@@ -49,11 +46,19 @@ if __name__ == "__main__":
     print(type(my_square_2))
     print(my_square_2.__dict__)
 
+
+    try:
+        print(my_square_1.size)
+    except Exception as e:
+            print(e)
+
+
     try:
         print(my_square_1.__size)
     except Exception as e:
         print(e)
 
+    
     try:
         my_square_3 = Square("3")
         print(type(my_square_3))
@@ -61,6 +66,7 @@ if __name__ == "__main__":
     except Exception as e:
         print(e)
 
+    
     try:
         my_square_4 = Square(-89)
         print(type(my_square_4))
