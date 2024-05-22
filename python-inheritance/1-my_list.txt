@@ -1,6 +1,6 @@
 # Test for MyList class
 
->>> from my_module import MyList
+>>> MyList = __import__('1-my_list').MyList
 
 # Create a MyList object
 >>> my_list = MyList([3, 1, 2])
