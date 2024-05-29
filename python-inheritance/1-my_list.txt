@@ -7,17 +7,21 @@ Case Scenarios
 ==============
 
 Create a MyList object:
-	>>> MyList.print_sorted([1, 2, 3, 4])
+	>>> my_list = MyList([1, 2, 3, 4])
+	>>> my_list.print_sorted()
 	[1, 2, 3, 4]
 
 Create a MyList object with an empty list:
-	>>> MyList([])
+	>>> my_list = MyList([])
+	>>> my_list.print_sorted()
 	[]
 
 Create a MyList object with a single element:
-	>>> MyList([5])
+	>>> my_list = MyList([5])
+	>>> my_list.print_sorted()
 	[5]
 
 Create a MyList object with multiple elements:
-	>>> multiple_list = MyList([9, 4, 7, 2, 6])
+	>>> my_list = MyList([9, 4, 7, 2, 6])
+	>>> my_list.print_sorted()
 	[2, 4, 6, 7, 9]
