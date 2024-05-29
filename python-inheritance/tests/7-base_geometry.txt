@@ -22,7 +22,7 @@ Input None:
 	>>> bg.integer_validator("age", None)
 	Traceback (most recent call last):
 	...
-	TypeError: right_side must be an integer
+	TypeError: age must be an integer
 
  No arguments provided:
 	>>> bg = BaseGeometry()
