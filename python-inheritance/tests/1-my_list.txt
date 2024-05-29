@@ -2,12 +2,15 @@ Test for MyList class
 
 ##################################
 >>> MyList = __import__('1-my_list').MyList
->>> MyList([])
-MyList([])
+
+>>> (MyList([1, 2, 3, 4]))
+[1, 2, 3, 4]
+>>> (MyList([3, 1, 4, 2]))
+[3, 1, 4, 2]
 >>> MyList([5])
-MyList([5])
+[5]
 >>> multiple_list = MyList([9, 4, 7, 2, 6])
 >>> multiple_list
-MyList([9, 4, 7, 2, 6])
+[9, 4, 7, 2, 6]
 >>> multiple_list.print_sorted()
 [2, 4, 6, 7, 9]

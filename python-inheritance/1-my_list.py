@@ -13,7 +13,3 @@ class MyList(list):
     def print_sorted(self):
         """Prints the list in sorted order (ascending)."""
         print(sorted(self))
-
-    def __repr__(self):
-        """Returns a string representation of the object."""
-        return f"MyList({super().__repr__()})"
