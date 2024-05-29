@@ -1,15 +1,30 @@
+"""
 Tests for the class BaseGeometry
-#################################
+
 >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
+# Testing area method
 >>> bg = BaseGeometry()
 >>> bg.area()
 Traceback (most recent call last):
-...
+    ...
 Exception: area() is not implemented
 
+# Testing integer_validator method with value 0
 >>> bg = BaseGeometry()
 >>> bg.integer_validator("age", 0)
 Traceback (most recent call last):
-...
+    ...
 ValueError: age must be greater than 0
+
+# Integer_validator method with non-integer values
+Test present: integer_validator("age", "4")
+Test present: integer_validator("age", (4,))
+Test present: integer_validator("age", [3])
+Test present: integer_validator("age", True)
+Test present: integer_validator("age", {3, 4})
+Test present: integer_validator("age", None)
+Test present: integer_validator()  # Test case with missing arguments
+Test present: integer_validator("age")  # Test case with missing value argument
+Test present: integer_validator("age", 1)  # Test case with valid integer value
+"""
