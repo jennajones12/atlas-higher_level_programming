@@ -14,5 +14,10 @@ Test for MyList class
 [9, 4, 7, 2, 6]
 >>> my_list.print_sorted()
 [2, 4, 6, 7, 9]
+>>> my_list.append(5)
+>>> my_list
+[9, 4, 7, 2, 6, 5]
+>>> my_list.print_sorted()
+[2, 4, 5, 6, 7, 9]
 >>> MyList.print_sorted([])
 []
