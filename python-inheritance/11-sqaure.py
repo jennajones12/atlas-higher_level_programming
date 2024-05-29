@@ -1,15 +1,7 @@
-#!/usr/bin/python3
-"""Square class"""
-Rectangle = __import__('10-rectangle').Rectangle
-
-
 class Square(Rectangle):
-    """Class square"""
-
     def __init__(self, size):
-        """Initializes Square"""
         super().__init__(size, size)
+        self.__size = size
 
     def __str__(self):
-        """String of Square"""
-        return "[Square] {}/{}".format(self.__side, self.__height)
+        return "[Square] {}/{}".format(self.__size, self.__size)
