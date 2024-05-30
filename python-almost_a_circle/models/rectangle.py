@@ -100,5 +100,7 @@ class Rectangle(Base):
         str: str representation in format
         [Rectangle] (<id>) <x>/<y> - <width>/<height>
         """
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - 
-        {self.width}/{self.height}"
+        return (
+                f"[Rectangle] ({self.id}) "
+                f"{self.x}/{self.y} - {self.width}/{self.height}"
+            )
