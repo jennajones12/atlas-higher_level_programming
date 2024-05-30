@@ -8,7 +8,7 @@ def read_file(filename=""):
     Reads text file and prints to stdout
 
     Args:
-        filename (str): name of ile to read
+        filename (str): name of file
     """
     with open(filename, 'r', encoding='utf-8') as file:
-        print(file.read())
+        print(file.read(), end="")
