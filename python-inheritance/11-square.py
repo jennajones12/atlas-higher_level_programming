@@ -17,6 +17,10 @@ class Rectangle:
 
 
 class Square(Rectangle):
+    """
+    Square class that inherits from Rectangle class.
+    represents square with a given size.
+    """
     def __init__(self, size):
         super().__init__(size, size)
         self.__size = size
