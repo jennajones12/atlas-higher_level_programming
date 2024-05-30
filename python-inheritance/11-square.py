@@ -22,12 +22,15 @@ class Square(Rectangle):
     represents square with a given size.
     """
     def __init__(self, size):
+        self.integer_validator(size)
         super().__init__(size, size)
         self.__size = size
 
-    def integer_validator(self):
-        if type(self.__size) != int or self.__size <= 0:
-            raise Exception("size must be a positive integer")
+    def integer_validator(self, size):
+        if type(size) != int:
+            raise TypeError("size must be an integer")
+        if size <= 0:
+            raise ValueError("size must be greater than 0")
 
     def area(self):
         return self.__size ** 2
