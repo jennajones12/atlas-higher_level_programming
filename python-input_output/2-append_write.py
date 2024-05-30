@@ -3,6 +3,7 @@
 function to append a string to a text file
 """
 
+
 def append_write(filename="", text=""):
     """
     Appends str at end of text file and returns num of chars added
