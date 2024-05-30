@@ -3,6 +3,7 @@
 Base module
 """
 
+
 class Base:
     """
     The Base class for all other classes in this project.
@@ -13,7 +14,7 @@ class Base:
     def __init__(self, id=None):
         """
         Initialization of a Base instance.
-        
+
         Args:
             id (int): The id of the instance. Defaults to None.
         """
