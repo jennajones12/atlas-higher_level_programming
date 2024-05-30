@@ -27,7 +27,7 @@ class Square(Rectangle):
         self.__size = size
 
     def integer_validator(self, size):
-        if type(size) != int:
+        if not isinstance(size, int):
             raise TypeError("size must be an integer")
         if size <= 0:
             raise ValueError("size must be greater than 0")
