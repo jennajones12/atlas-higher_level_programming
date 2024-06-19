@@ -1,19 +1,24 @@
 #!/usr/bin/python3
 """
-Write a python file that contains the class definition of a State and an
-instance Base = declarative_base():
+cities class 
 """
 
-import sys
-from model_state import Base, State
-from sqlalchemy import (create_engine)
+from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy.ext.declarative import declarative_base
+Base = declarative_base()
 
 
-if __name__ == "__main__":
-    # Get command-line arguments
-    username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
+class City(Base):
+    """ City class for cities table """
+    __tablename__ = 'cities'
 
-    # Connect to MySQL
-    connection = "mysql://{}:{}@localhost:3306/{}"
-    engine = create_engine(conection.format(username, password, db_name))
-    Base.metadata.create_all(engine)
+    id = Column(Integer,
+                nullable=False,
+                primary_key=True,
+                autoincrement=True,
+                unique=True)
+    name = Column(String(128),
+                  nullable=False)
+    state_id = Column(Integer,
+                      ForeignKey("states.id"),
+                      nullable=False)
