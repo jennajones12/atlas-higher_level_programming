@@ -6,45 +6,45 @@ takes in the name of a state as an argument and lists all cities of that state, 
 import sys
 import MySQLdb
 
-if __name__ == "__main__":
-    # Check if all 4 arguments are provided
-    if len(sys.argv) != 5:
-        print("Usage: {} username password database_name state_name".format(sys.argv[0]))
-        sys.exit(1)
-    
-    # Retrieve command line arguments
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database_name = sys.argv[3]
-    state_name = sys.argv[4]
 
-    # Connect to MySQL server
-    try:
-        db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database_name)
-        cursor = db.cursor()
-    except MySQLdb.Error as e:
-        print("MySQLdb Error {}: {}".format(e.args[0], e.args[1]))
-        sys.exit(1)
-    
-    # Construct SQL query with parameterized query for state name
-    query = """
-        SELECT cities.name
-        FROM cities
-        JOIN states ON cities.state_id = states.id
-        WHERE states.name = %s
-        ORDER BY cities.id ASC
-    """
-    
-    # Execute query with user input
-    try:
-        cursor.execute(query, (state_name,))
-        results = cursor.fetchall()
-        print(", ".join(city[0] for city in results))
-    except MySQLdb.Error as e:
-        print("MySQLdb Error {}: {}".format(e.args[0], e.args[1]))
-        sys.exit(1)
-    
+if __name__ == "__main__":
+    # Get command-line arguments
+    username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
+
+    search = sys.argv[4]
+    sql = "SELECT `cities`.`name` "
+    sql += "FROM `states` "
+    sql += "INNER JOIN `cities` "
+    sql += "ON `cities`.`state_id` = `states`.`id` "
+    sql += "WHERE `states`.`name` = %s "
+    sql += "ORDER BY `cities`.`id`;"
+
+    # Connect to MySQL
+    db = MySQLdb.connect(host="localhost",
+                         port=3306,
+                         user=username,
+                         passwd=password,
+                         db=db_name)
+
+    # Create a cursor object
+    cursor = db.cursor()
+
+    # Execute the query
+    cursor.execute(sql, (search,))
+
+    # Fetch all results
+    results = cursor.fetchall()
+
+    # Print the results
+    first = True
+    for row in results:
+        if first:
+            print(row[0], end="")
+            first = False
+        else:
+            print(', ' + row[0], end="")
+    print()
+
     # Close cursor and database connection
     cursor.close()
     db.close()
-
