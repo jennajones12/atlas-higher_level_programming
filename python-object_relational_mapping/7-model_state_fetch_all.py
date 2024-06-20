@@ -9,6 +9,7 @@ from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 import sys
 
+
 def list_states(username, password, db_name):
     # Create a database connection
     connection = "mysql://{}:{}@localhost:3306/{}"
@@ -33,4 +34,3 @@ def list_states(username, password, db_name):
 if __name__ == "__main__":
     username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
     list_states(username, password, db_name)
-
