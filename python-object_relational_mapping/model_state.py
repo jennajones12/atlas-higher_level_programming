@@ -1,24 +1,23 @@
 #!/usr/bin/python3
 """
-cities class 
+Module containing the definition of the State class.
 """
 
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, String, create_engine
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+
 Base = declarative_base()
 
-
-class City(Base):
-    """ City class for cities table """
-    __tablename__ = 'cities'
-
-    id = Column(Integer,
-                nullable=False,
-                primary_key=True,
-                autoincrement=True,
-                unique=True)
-    name = Column(String(128),
-                  nullable=False)
-    state_id = Column(Integer,
-                      ForeignKey("states.id"),
-                      nullable=False)
+class State(Base):
+    """
+    State class that inherits from Base.
+    Links to the MySQL table 'states'.
+    
+    Attributes:
+        id (int): Auto-generated, unique integer, can't be null, primary key.
+        name (str): String with maximum 128 characters, can't be null.
+    """
+    __tablename__ = 'states'
+    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
+    name = Column(String(128), nullable=False)
