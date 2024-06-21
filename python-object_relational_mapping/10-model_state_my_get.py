@@ -25,8 +25,8 @@ def print_states(username, password, db_name, search):
     session = Session()
 
     # Query the database for the state with the given name
-    state = session.query(State).\
-    filter(State.name == search).first()
+    state = session.query(State).order_by(State.id).\
+    filter(State.name == search).all()
 
     # Print the result
     if states:
