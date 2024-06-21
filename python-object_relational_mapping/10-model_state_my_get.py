@@ -16,17 +16,16 @@ def print_states(username, password, db_name, search):
     # Create an engine and connect to the MySQL server
     connection = "mysql://{}:{}@localhost:3306/{}"
     engine = create_engine(connection.format(username, password, db_name))
+    Base.metadata.create_all(engine)
 
 
     # Create a configured "Session" class
     Session = sessionmaker(bind=engine)
-
-    # Create a Session
     session = Session()
 
     # Query the database for the state with the given name
     state = session.query(State).order_by(State.id).\
-    filter(State.name == search).all()
+        filter(State.name == search).all()
 
     # Print the result
     if states:
