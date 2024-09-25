@@ -7,10 +7,8 @@ class Rectangle(Base):
     """Rectangle class inherits from Base"""
 
     def __init__(self, width=0, height=0, x=0, y=0, id=None):
-        """initialize width, height, x, y, and id"""
-
+        """Initialize width, height, x, y, and id"""
         super().__init__(id)
-
         self.width = width
         self.height = height
         self.x = x
@@ -32,7 +30,7 @@ class Rectangle(Base):
     def height(self):
         return self.__height
 
-   @height.setter
+    @height.setter
     def height(self, value):
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -56,7 +54,7 @@ class Rectangle(Base):
     def y(self):
         return self.__y
 
-   @y.setter
+    @y.setter
     def y(self, value):
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
