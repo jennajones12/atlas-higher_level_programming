@@ -111,3 +111,12 @@ class Rectangle(Base):
         if kwargs is not None and args is not None:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """Return dict description of shape"""
+        d = {"id": self.id,
+             "width": self.width,
+             "height": self.height,
+             "x": self.x,
+             "y": self.y}
+        return d
