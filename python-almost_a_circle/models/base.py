@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """File for class Base"""
 
+import json
+
 
 class Base:
     """Base class for shapes"""
