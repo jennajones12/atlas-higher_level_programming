@@ -5,20 +5,26 @@ import unittest
 from models.base import Base
 import os
 
+
 class TestBase(unittest.TestCase):
     """Test cases for the Base class"""
 
-    def test_auto_id_assignment(self):
-        """Test if Base() auto assigns ID"""
-        b1 = Base()
-        b2 = Base()
-        b3 = Base(10)
-        b4 = Base()
+    def test_id(self):
+        """Test the creation of a new Base instance."""
+        Base._Base__nb_objects = 0
+        base = Base()
+        self.assertEqual(base.id, 1)
 
-        self.assertEqual(b1.id, 1)
-        self.assertEqual(b2.id, 2)
-        self.assertEqual(b3.id, 10)
-        self.assertEqual(b4.id, 3)
+    def test_make_a_base(self):
+        """Check if the IDs are sequential"""
+        baseA = Base()
+        baseB = Base()
+        self.assertEqual(baseA.id, baseB.id - 1)
 
-if __name__ == '__main__':
-    unittest.main()
+    def test_assign_id(self):
+        """Test if we can assign an ID ourselves."""
+        self.assertEqual(98, Base(98).id)
+
+    def test_create_base_with_default_id(self):
+        """Test the creation of a new Base with a default id"""
+        self.assertIsNotNone(Base())
