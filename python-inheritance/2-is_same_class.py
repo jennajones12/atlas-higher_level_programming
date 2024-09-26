@@ -2,6 +2,6 @@
 """Module that defines is_same_class function"""
 
 
-def is_same_class(obj, a_class):
+def is_same_class(obj, some_class):
     """Return True if obj is  instance of a_class; otherwise False"""
-    return (same_class is type(obj))
+    return (some_class is type(obj))
